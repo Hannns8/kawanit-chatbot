@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>KawanIT — Belajar IT lewat chat</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">&lt;/&gt;</span><div><strong>KawanIT</strong><small>AI Learning Companion</small></div></div>
+      <div class="sidebar-section">
+        <p class="eyebrow">RUANG BELAJAR</p>
+        <h2>Pilih topik</h2>
+        <p class="sidebar-description">Fokuskan pertanyaanmu pada bidang yang ingin dipelajari.</p>
+        <div id="topic-list" class="topic-list" role="group" aria-label="Pilihan topik">
+          <button type="button" class="topic active" data-topic="web" data-label="Web Development"><span class="topic-icon">⌘</span>Web Development</button>
+          <button type="button" class="topic" data-topic="networking" data-label="Networking"><span class="topic-icon">◎</span>Networking</button>
+          <button type="button" class="topic" data-topic="android" data-label="Android/Kotlin"><span class="topic-icon">▣</span>Android/Kotlin</button>
+          <button type="button" class="topic" data-topic="database" data-label="Database"><span class="topic-icon">▤</span>Database</button>
+          <button type="button" class="topic" data-topic="cybersecurity" data-label="Cybersecurity"><span class="topic-icon">◇</span>Cybersecurity</button>
+        </div>
+      </div>
+      <div class="sidebar-bottom">
+        <button id="clear-button" class="clear-button" type="button">↺ <span>Mulai percakapan baru</span></button>
+        <p>Belajar pelan-pelan, paham sungguhan.</p>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-title"><span class="status-dot"></span><div><strong>Tutor IT</strong><small id="status-label">Memeriksa koneksi...</small></div></div>
+        <span class="model-badge">✦ Gemini AI</span>
+      </header>
+
+      <section id="chat-scroll" class="chat-scroll" aria-label="Percakapan">
+        <div id="welcome" class="welcome">
+          <div class="welcome-icon">✦</div>
+          <div class="welcome-kicker">TEMAN BELAJAR DIGITALMU</div>
+          <h1>Halo, mau belajar<br><span>apa hari ini?</span></h1>
+          <p>Tanya konsep IT, minta contoh kode, atau latihan singkat. Pilih topik di samping, lalu mulai percakapan.</p>
+          <div class="suggestions" aria-label="Contoh pertanyaan">
+            <button type="button" data-prompt="Jelaskan perbedaan HTML, CSS, dan JavaScript dengan contoh sederhana." data-suggestion-topic="web">Apa beda HTML, CSS, dan JavaScript? <span>↗</span></button>
+            <button type="button" data-prompt="Jelaskan cara kerja internet untuk pemula dengan analogi sederhana." data-suggestion-topic="networking">Bagaimana internet bekerja? <span>↗</span></button>
+            <button type="button" data-prompt="Beri saya latihan SQL SELECT untuk pemula beserta petunjuknya." data-suggestion-topic="database">Beri latihan SQL pemula <span>↗</span></button>
+          </div>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+      </section>
+
+      <div class="composer-wrap">
+        <div id="error-banner" class="error-banner" role="alert" hidden></div>
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message-input">Tulis pertanyaan IT</label>
+          <textarea id="message-input" name="message" rows="1" maxlength="2000" placeholder="Tulis pertanyaan tentang IT di sini..." required></textarea>
+          <button id="send-button" class="send-button" type="submit" aria-label="Kirim pesan">➤</button>
+        </form>
+        <p class="composer-note">Tekan Enter untuk kirim · Shift + Enter untuk baris baru · Jawaban AI dapat keliru, periksa kembali hal penting.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
