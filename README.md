@@ -71,39 +71,3 @@ Endpoint lain: `GET /api/status` untuk status konfigurasi, `GET /api/history` un
 | Variasi jawaban | `temperature: 0.6` di `server.js` |
 | Panjang jawaban | `maxOutputTokens: 1024` di `server.js` |
 | Memory | 12 pesan terakhir per sesi, sementara di server |
-
-## Mengunggah ke GitHub
-
-1. Pastikan `.env` **tidak** ikut diunggah. File `.gitignore` sudah mengecualikannya. Jangan unggah `node_modules`.
-2. Buat repositori kosong di GitHub, misalnya `kawanit-chatbot`.
-3. Jalankan di folder proyek (ganti URL dengan URL repositori Anda):
-
-   ```bash
-   git init
-   git add .
-   git status
-   git commit -m "Buat chatbot pendidikan IT"
-   git branch -M main
-   git remote add origin https://github.com/USERNAME/kawanit-chatbot.git
-   git push -u origin main
-   ```
-
-4. Salin URL repositori dari browser untuk dikumpulkan. Jika `git status` memperlihatkan `.env`, hentikan dan perbaiki `.gitignore` sebelum commit.
-
-## Screenshot untuk tugas
-
-Ambil screenshot setelah aplikasi berjalan dengan API key Anda:
-
-1. **Halaman awal:** logo KawanIT, pilihan lima topik, dan contoh pertanyaan.
-2. **Percakapan Web Development:** satu pertanyaan dan jawaban Gemini yang relevan.
-3. **Topik lain:** misalnya Database atau Networking, untuk menunjukkan pilihan topik bekerja.
-4. **Memory percakapan:** pertanyaan lanjutan yang merujuk jawaban sebelumnya, atau halaman yang dimuat ulang tetapi chat masih tampil.
-5. **Tampilan ponsel** (opsional): gunakan mode perangkat di browser.
-
-Simpan gambar sebagai PNG/JPG. Pastikan screenshot tidak memperlihatkan file `.env`, API key, atau data pribadi. Kumpulkan URL GitHub dan screenshot sesuai format yang diminta dosen.
-
-## Catatan
-
-Aplikasi ini contoh pembelajaran lokal. Penyimpanan sesi di memori cocok untuk demo satu server. Untuk deployment publik yang lebih besar, tambahkan penyimpanan sesi permanen dan pembatasan permintaan yang lebih lengkap.
-
-Referensi integrasi: [Dokumentasi Gemini API](https://ai.google.dev/gemini-api/docs) dan [Google Gen AI SDK](https://www.npmjs.com/package/@google/genai).
